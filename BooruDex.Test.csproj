@@ -12,6 +12,7 @@
   
   <ItemGroup>
     <PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
+    <PackageReference Include="BooruDex" Version="1.0.0" />
     <PackageReference Include="BooruSharp" Version="3.0.1" />
   </ItemGroup>
 
