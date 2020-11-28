@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 using BenchmarkDotNet.Running;
 
@@ -8,7 +9,7 @@ namespace BooruDex.Test
 {
 	class Program
 	{
-		static async System.Threading.Tasks.Task Main(string[] args)
+		static async Task Main(string[] args)
 		{
 			try
 			{

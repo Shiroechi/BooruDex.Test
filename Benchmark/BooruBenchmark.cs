@@ -3,14 +3,8 @@ using System.Net.Http;
 using System.Threading.Tasks;
 
 using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Engines;
 using BenchmarkDotNet.Mathematics;
 using BenchmarkDotNet.Order;
-
-using BooruDex.Booru.Client;
-using BooruDex.Models;
-
-using BooruSharp.Booru;
 
 namespace BooruDex.Test.Benchmark
 {
@@ -35,11 +29,26 @@ namespace BooruDex.Test.Benchmark
 		//public uint poolId;
 
 		[Benchmark]
-		public async Task<Post[]> DanbooruBooruDex()
+		public async Task<BooruDex.Models.Post[]> DanbooruBooruDexV1()
 		{
 			try
 			{
 				var booru = new Booru.Client.DanbooruDonmai(this.HttpClient);
+				return await booru.GetRandomPostAsync(10);
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e);
+				return null;
+			}
+		}
+
+		[Benchmark]
+		public async Task<BooruDex2.Models.Post[]> DanbooruBooruDexV2()
+		{
+			try
+			{
+				var booru = new BooruDex2.Booru.Client.DanbooruDonmai(this.HttpClient);
 				return await booru.GetRandomPostAsync(10);
 			}
 			catch (Exception e)
@@ -56,7 +65,7 @@ namespace BooruDex.Test.Benchmark
 			{
 				var booru = new BooruSharp.Booru.DanbooruDonmai();
 				booru.HttpClient = this.HttpClient;
-				return await booru.GetRandomPostsAsync(10, null);
+				return await booru.GetRandomPostsAsync(10);
 			}
 			catch (Exception e)
 			{
@@ -65,35 +74,35 @@ namespace BooruDex.Test.Benchmark
 			}
 		}
 
-		[Benchmark]
-		public async Task<Post[]> YandereBooruDex()
-		{
-			try
-			{
-				var booru = new Booru.Client.Yandere(this.HttpClient);
-				return await booru.GetRandomPostAsync(10);
-			}
-			catch (Exception e)
-			{
-				Console.WriteLine(e);
-				return null;
-			}
-		}
+		//[Benchmark]
+		//public async Task<Post[]> YandereBooruDex()
+		//{
+		//	try
+		//	{
+		//		var booru = new Booru.Client.Yandere(this.HttpClient);
+		//		return await booru.GetRandomPostAsync(10);
+		//	}
+		//	catch (Exception e)
+		//	{
+		//		Console.WriteLine(e);
+		//		return null;
+		//	}
+		//}
 
-		[Benchmark]
-		public async Task<BooruSharp.Search.Post.SearchResult[]> YandereBooruSharp()
-		{
-			try
-			{
-				var booru = new BooruSharp.Booru.Yandere();
-				booru.HttpClient = this.HttpClient;
-				return await booru.GetRandomPostsAsync(10, null);
-			}
-			catch (Exception e)
-			{
-				Console.WriteLine(e);
-				return null;
-			}
-		}
+		//[Benchmark]
+		//public async Task<BooruSharp.Search.Post.SearchResult[]> YandereBooruSharp()
+		//{
+		//	try
+		//	{
+		//		var booru = new BooruSharp.Booru.Yandere();
+		//		booru.HttpClient = this.HttpClient;
+		//		return await booru.GetRandomPostsAsync(10, null);
+		//	}
+		//	catch (Exception e)
+		//	{
+		//		Console.WriteLine(e);
+		//		return null;
+		//	}
+		//}
 	}
 }
