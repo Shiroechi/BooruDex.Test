@@ -1,0 +1,570 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 3 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet restore  /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 in D:\Project\C#\API\BooruDex.Test\bin\Release\net5.0\668a6b17-a214-4a65-86b6-18096521e466
+// command took 15.61s and exited with 0
+// start dotnet build -c Release  --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 in D:\Project\C#\API\BooruDex.Test\bin\Release\net5.0\668a6b17-a214-4a65-86b6-18096521e466
+// command took 34.08s and exited with 1
+// start dotnet build -c Release  --no-restore --no-dependencies /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 in D:\Project\C#\API\BooruDex.Test\bin\Release\net5.0\668a6b17-a214-4a65-86b6-18096521e466
+// command took 15.41s and exited with 0
+// ***** Done, took 00:01:06 (66.1 sec)   *****
+// Found 3 benchmarks:
+//   BooruBenchmark.DanbooruBooruDexV1: MediumRun(IterationCount=15, LaunchCount=2, WarmupCount=10)
+//   BooruBenchmark.DanbooruBooruDexV2: MediumRun(IterationCount=15, LaunchCount=2, WarmupCount=10)
+//   BooruBenchmark.DanbooruBooruSharp: MediumRun(IterationCount=15, LaunchCount=2, WarmupCount=10)
+
+// **************************
+// Benchmark: BooruBenchmark.DanbooruBooruDexV1: MediumRun(IterationCount=15, LaunchCount=2, WarmupCount=10)
+// *** Execute ***
+// Launch: 1 / 2
+// Execute: dotnet "668a6b17-a214-4a65-86b6-18096521e466.dll" --benchmarkName "BooruDex.Test.Benchmark.BooruBenchmark.DanbooruBooruDexV1" --job "MediumRun" --benchmarkId 0 in D:\Project\C#\API\BooruDex.Test\bin\Release\net5.0\668a6b17-a214-4a65-86b6-18096521e466\bin\Release\netcoreapp5.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET Core 5.0.0 (CoreCLR 5.0.20.51904, CoreFX 5.0.20.51904), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: MediumRun(IterationCount=15, LaunchCount=2, WarmupCount=10)
+
+OverheadJitting  1: 1 op, 1458600.00 ns, 1.4586 ms/op
+WorkloadJitting  1: 1 op, 2180141100.00 ns, 2.1801 s/op
+
+WorkloadWarmup   1: 1 op, 415339000.00 ns, 415.3390 ms/op
+WorkloadWarmup   2: 1 op, 389093900.00 ns, 389.0939 ms/op
+WorkloadWarmup   3: 1 op, 407445800.00 ns, 407.4458 ms/op
+BooruDex.Exceptions.SearchNotFoundException: Something happen when deserialize Post data.
+ ---> System.ArgumentNullException: Value cannot be null. (Parameter 'value')
+   at Newtonsoft.Json.Linq.Extensions.Value[T,U](IEnumerable`1 value)
+   at BooruDex.Booru.Template.Danbooru.ReadPost(JToken json)
+   at System.Linq.Enumerable.SelectIListIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at BooruDex.Booru.Template.Danbooru.GetRandomPostAsync(UInt32 limit, String[] tags)
+   --- End of inner exception stack trace ---
+   at BooruDex.Booru.Template.Danbooru.GetRandomPostAsync(UInt32 limit, String[] tags)
+   at BooruDex.Test.Benchmark.BooruBenchmark.DanbooruBooruDexV1() in D:\Project\C#\API\BooruDex.Test\Benchmark\BooruBenchmark.cs:line 37
+WorkloadWarmup   4: 1 op, 701253400.00 ns, 701.2534 ms/op
+BooruDex.Exceptions.SearchNotFoundException: Something happen when deserialize Post data.
+ ---> System.ArgumentNullException: Value cannot be null. (Parameter 'value')
+   at Newtonsoft.Json.Linq.Extensions.Value[T,U](IEnumerable`1 value)
+   at BooruDex.Booru.Template.Danbooru.ReadPost(JToken json)
+   at System.Linq.Enumerable.SelectIListIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at BooruDex.Booru.Template.Danbooru.GetRandomPostAsync(UInt32 limit, String[] tags)
+   --- End of inner exception stack trace ---
+   at BooruDex.Booru.Template.Danbooru.GetRandomPostAsync(UInt32 limit, String[] tags)
+   at BooruDex.Test.Benchmark.BooruBenchmark.DanbooruBooruDexV1() in D:\Project\C#\API\BooruDex.Test\Benchmark\BooruBenchmark.cs:line 37
+WorkloadWarmup   5: 1 op, 460520600.00 ns, 460.5206 ms/op
+WorkloadWarmup   6: 1 op, 385065000.00 ns, 385.0650 ms/op
+WorkloadWarmup   7: 1 op, 494970000.00 ns, 494.9700 ms/op
+WorkloadWarmup   8: 1 op, 376649400.00 ns, 376.6494 ms/op
+WorkloadWarmup   9: 1 op, 399715200.00 ns, 399.7152 ms/op
+WorkloadWarmup  10: 1 op, 402728400.00 ns, 402.7284 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 402245200.00 ns, 402.2452 ms/op
+BooruDex.Exceptions.SearchNotFoundException: Something happen when deserialize Post data.
+ ---> System.ArgumentNullException: Value cannot be null. (Parameter 'value')
+   at Newtonsoft.Json.Linq.Extensions.Value[T,U](IEnumerable`1 value)
+   at BooruDex.Booru.Template.Danbooru.ReadPost(JToken json)
+   at System.Linq.Enumerable.SelectIListIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at BooruDex.Booru.Template.Danbooru.GetRandomPostAsync(UInt32 limit, String[] tags)
+   --- End of inner exception stack trace ---
+   at BooruDex.Booru.Template.Danbooru.GetRandomPostAsync(UInt32 limit, String[] tags)
+   at BooruDex.Test.Benchmark.BooruBenchmark.DanbooruBooruDexV1() in D:\Project\C#\API\BooruDex.Test\Benchmark\BooruBenchmark.cs:line 37
+WorkloadActual   2: 1 op, 592923000.00 ns, 592.9230 ms/op
+WorkloadActual   3: 1 op, 407057300.00 ns, 407.0573 ms/op
+WorkloadActual   4: 1 op, 404893900.00 ns, 404.8939 ms/op
+BooruDex.Exceptions.SearchNotFoundException: Something happen when deserialize Post data.
+ ---> System.ArgumentNullException: Value cannot be null. (Parameter 'value')
+   at Newtonsoft.Json.Linq.Extensions.Value[T,U](IEnumerable`1 value)
+   at BooruDex.Booru.Template.Danbooru.ReadPost(JToken json)
+   at System.Linq.Enumerable.SelectIListIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at BooruDex.Booru.Template.Danbooru.GetRandomPostAsync(UInt32 limit, String[] tags)
+   --- End of inner exception stack trace ---
+   at BooruDex.Booru.Template.Danbooru.GetRandomPostAsync(UInt32 limit, String[] tags)
+   at BooruDex.Test.Benchmark.BooruBenchmark.DanbooruBooruDexV1() in D:\Project\C#\API\BooruDex.Test\Benchmark\BooruBenchmark.cs:line 44
+WorkloadActual   5: 1 op, 383876700.00 ns, 383.8767 ms/op
+WorkloadActual   6: 1 op, 384863600.00 ns, 384.8636 ms/op
+WorkloadActual   7: 1 op, 452521900.00 ns, 452.5219 ms/op
+WorkloadActual   8: 1 op, 396639000.00 ns, 396.6390 ms/op
+WorkloadActual   9: 1 op, 762730800.00 ns, 762.7308 ms/op
+WorkloadActual  10: 1 op, 418015600.00 ns, 418.0156 ms/op
+WorkloadActual  11: 1 op, 423862400.00 ns, 423.8624 ms/op
+WorkloadActual  12: 1 op, 918323500.00 ns, 918.3235 ms/op
+WorkloadActual  13: 1 op, 397161300.00 ns, 397.1613 ms/op
+WorkloadActual  14: 1 op, 380495300.00 ns, 380.4953 ms/op
+WorkloadActual  15: 1 op, 421994200.00 ns, 421.9942 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 402245200.00 ns, 402.2452 ms/op
+WorkloadResult   2: 1 op, 407057300.00 ns, 407.0573 ms/op
+WorkloadResult   3: 1 op, 404893900.00 ns, 404.8939 ms/op
+WorkloadResult   4: 1 op, 383876700.00 ns, 383.8767 ms/op
+WorkloadResult   5: 1 op, 384863600.00 ns, 384.8636 ms/op
+WorkloadResult   6: 1 op, 452521900.00 ns, 452.5219 ms/op
+WorkloadResult   7: 1 op, 396639000.00 ns, 396.6390 ms/op
+WorkloadResult   8: 1 op, 418015600.00 ns, 418.0156 ms/op
+WorkloadResult   9: 1 op, 423862400.00 ns, 423.8624 ms/op
+WorkloadResult  10: 1 op, 397161300.00 ns, 397.1613 ms/op
+WorkloadResult  11: 1 op, 380495300.00 ns, 380.4953 ms/op
+WorkloadResult  12: 1 op, 421994200.00 ns, 421.9942 ms/op
+GC:  0 0 0 250448 1
+Threading:  4 0 1
+
+// AfterAll
+// Benchmark Process 12240 has exited with code 0
+// Launch: 2 / 2
+// Execute: dotnet "668a6b17-a214-4a65-86b6-18096521e466.dll" --benchmarkName "BooruDex.Test.Benchmark.BooruBenchmark.DanbooruBooruDexV1" --job "MediumRun" --benchmarkId 0 in D:\Project\C#\API\BooruDex.Test\bin\Release\net5.0\668a6b17-a214-4a65-86b6-18096521e466\bin\Release\netcoreapp5.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET Core 5.0.0 (CoreCLR 5.0.20.51904, CoreFX 5.0.20.51904), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: MediumRun(IterationCount=15, LaunchCount=2, WarmupCount=10)
+
+OverheadJitting  1: 1 op, 1298900.00 ns, 1.2989 ms/op
+WorkloadJitting  1: 1 op, 1974561300.00 ns, 1.9746 s/op
+
+WorkloadWarmup   1: 1 op, 796706800.00 ns, 796.7068 ms/op
+BooruDex.Exceptions.SearchNotFoundException: Something happen when deserialize Post data.
+ ---> System.ArgumentNullException: Value cannot be null. (Parameter 'value')
+   at Newtonsoft.Json.Utilities.ValidationUtils.ArgumentNotNull(Object value, String parameterName)
+   at Newtonsoft.Json.Linq.Extensions.Value[T,U](IEnumerable`1 value)
+   at Newtonsoft.Json.Linq.Extensions.Value[U](IEnumerable`1 value)
+   at BooruDex.Booru.Template.Danbooru.ReadPost(JToken json)
+   at System.Linq.Enumerable.SelectIListIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at BooruDex.Booru.Template.Danbooru.GetRandomPostAsync(UInt32 limit, String[] tags)
+   --- End of inner exception stack trace ---
+   at BooruDex.Booru.Template.Danbooru.GetRandomPostAsync(UInt32 limit, String[] tags)
+   at BooruDex.Test.Benchmark.BooruBenchmark.DanbooruBooruDexV1() in D:\Project\C#\API\BooruDex.Test\Benchmark\BooruBenchmark.cs:line 37
+WorkloadWarmup   2: 1 op, 496266200.00 ns, 496.2662 ms/op
+WorkloadWarmup   3: 1 op, 883309900.00 ns, 883.3099 ms/op
+WorkloadWarmup   4: 1 op, 427370200.00 ns, 427.3702 ms/op
+WorkloadWarmup   5: 1 op, 851640800.00 ns, 851.6408 ms/op
+WorkloadWarmup   6: 1 op, 434997700.00 ns, 434.9977 ms/op
+WorkloadWarmup   7: 1 op, 452477600.00 ns, 452.4776 ms/op
+WorkloadWarmup   8: 1 op, 477592400.00 ns, 477.5924 ms/op
+WorkloadWarmup   9: 1 op, 383275600.00 ns, 383.2756 ms/op
+WorkloadWarmup  10: 1 op, 442602500.00 ns, 442.6025 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 731688900.00 ns, 731.6889 ms/op
+WorkloadActual   2: 1 op, 385695000.00 ns, 385.6950 ms/op
+WorkloadActual   3: 1 op, 452780100.00 ns, 452.7801 ms/op
+WorkloadActual   4: 1 op, 414485000.00 ns, 414.4850 ms/op
+WorkloadActual   5: 1 op, 407690200.00 ns, 407.6902 ms/op
+WorkloadActual   6: 1 op, 402564800.00 ns, 402.5648 ms/op
+WorkloadActual   7: 1 op, 380955200.00 ns, 380.9552 ms/op
+WorkloadActual   8: 1 op, 416707100.00 ns, 416.7071 ms/op
+WorkloadActual   9: 1 op, 401420000.00 ns, 401.4200 ms/op
+WorkloadActual  10: 1 op, 450945100.00 ns, 450.9451 ms/op
+WorkloadActual  11: 1 op, 465018300.00 ns, 465.0183 ms/op
+WorkloadActual  12: 1 op, 417672300.00 ns, 417.6723 ms/op
+BooruDex.Exceptions.SearchNotFoundException: Something happen when deserialize Post data.
+ ---> System.ArgumentNullException: Value cannot be null. (Parameter 'value')
+   at Newtonsoft.Json.Linq.Extensions.Value[T,U](IEnumerable`1 value)
+   at BooruDex.Booru.Template.Danbooru.ReadPost(JToken json)
+   at System.Linq.Enumerable.SelectIListIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at BooruDex.Booru.Template.Danbooru.GetRandomPostAsync(UInt32 limit, String[] tags)
+   --- End of inner exception stack trace ---
+   at BooruDex.Booru.Template.Danbooru.GetRandomPostAsync(UInt32 limit, String[] tags)
+   at BooruDex.Test.Benchmark.BooruBenchmark.DanbooruBooruDexV1() in D:\Project\C#\API\BooruDex.Test\Benchmark\BooruBenchmark.cs:line 44
+WorkloadActual  13: 1 op, 415914500.00 ns, 415.9145 ms/op
+WorkloadActual  14: 1 op, 380670100.00 ns, 380.6701 ms/op
+WorkloadActual  15: 1 op, 407328000.00 ns, 407.3280 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 385695000.00 ns, 385.6950 ms/op
+WorkloadResult   2: 1 op, 452780100.00 ns, 452.7801 ms/op
+WorkloadResult   3: 1 op, 414485000.00 ns, 414.4850 ms/op
+WorkloadResult   4: 1 op, 407690200.00 ns, 407.6902 ms/op
+WorkloadResult   5: 1 op, 402564800.00 ns, 402.5648 ms/op
+WorkloadResult   6: 1 op, 380955200.00 ns, 380.9552 ms/op
+WorkloadResult   7: 1 op, 416707100.00 ns, 416.7071 ms/op
+WorkloadResult   8: 1 op, 401420000.00 ns, 401.4200 ms/op
+WorkloadResult   9: 1 op, 450945100.00 ns, 450.9451 ms/op
+WorkloadResult  10: 1 op, 465018300.00 ns, 465.0183 ms/op
+WorkloadResult  11: 1 op, 417672300.00 ns, 417.6723 ms/op
+WorkloadResult  12: 1 op, 415914500.00 ns, 415.9145 ms/op
+WorkloadResult  13: 1 op, 380670100.00 ns, 380.6701 ms/op
+WorkloadResult  14: 1 op, 407328000.00 ns, 407.3280 ms/op
+GC:  0 0 0 259584 1
+Threading:  6 0 1
+
+// AfterAll
+// Benchmark Process 9628 has exited with code 0
+
+Mean = 410.518 ms, StdErr = 4.633 ms (1.13%), N = 26, StdDev = 23.625 ms
+Min = 380.495 ms, Q1 = 396.770 ms, Median = 407.193 ms, Q3 = 417.930 ms, Max = 465.018 ms
+IQR = 21.160 ms, LowerFence = 365.029 ms, UpperFence = 449.670 ms
+ConfidenceInterval = [393.259 ms; 427.777 ms] (CI 99.9%), Margin = 17.259 ms (4.20% of Mean)
+Skewness = 0.71, Kurtosis = 2.67, MValue = 2
+
+// **************************
+// Benchmark: BooruBenchmark.DanbooruBooruDexV2: MediumRun(IterationCount=15, LaunchCount=2, WarmupCount=10)
+// *** Execute ***
+// Launch: 1 / 2
+// Execute: dotnet "668a6b17-a214-4a65-86b6-18096521e466.dll" --benchmarkName "BooruDex.Test.Benchmark.BooruBenchmark.DanbooruBooruDexV2" --job "MediumRun" --benchmarkId 1 in D:\Project\C#\API\BooruDex.Test\bin\Release\net5.0\668a6b17-a214-4a65-86b6-18096521e466\bin\Release\netcoreapp5.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET Core 5.0.0 (CoreCLR 5.0.20.51904, CoreFX 5.0.20.51904), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: MediumRun(IterationCount=15, LaunchCount=2, WarmupCount=10)
+
+OverheadJitting  1: 1 op, 1413100.00 ns, 1.4131 ms/op
+WorkloadJitting  1: 1 op, 1515014800.00 ns, 1.5150 s/op
+
+WorkloadWarmup   1: 1 op, 807663000.00 ns, 807.6630 ms/op
+WorkloadWarmup   2: 1 op, 748617000.00 ns, 748.6170 ms/op
+WorkloadWarmup   3: 1 op, 795512800.00 ns, 795.5128 ms/op
+WorkloadWarmup   4: 1 op, 381205500.00 ns, 381.2055 ms/op
+WorkloadWarmup   5: 1 op, 744976900.00 ns, 744.9769 ms/op
+WorkloadWarmup   6: 1 op, 872687800.00 ns, 872.6878 ms/op
+WorkloadWarmup   7: 1 op, 760935000.00 ns, 760.9350 ms/op
+WorkloadWarmup   8: 1 op, 545846800.00 ns, 545.8468 ms/op
+WorkloadWarmup   9: 1 op, 762008700.00 ns, 762.0087 ms/op
+WorkloadWarmup  10: 1 op, 417886200.00 ns, 417.8862 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 383513200.00 ns, 383.5132 ms/op
+WorkloadActual   2: 1 op, 444598300.00 ns, 444.5983 ms/op
+WorkloadActual   3: 1 op, 428776700.00 ns, 428.7767 ms/op
+WorkloadActual   4: 1 op, 398490600.00 ns, 398.4906 ms/op
+WorkloadActual   5: 1 op, 768551900.00 ns, 768.5519 ms/op
+WorkloadActual   6: 1 op, 401837900.00 ns, 401.8379 ms/op
+WorkloadActual   7: 1 op, 418825500.00 ns, 418.8255 ms/op
+WorkloadActual   8: 1 op, 396889600.00 ns, 396.8896 ms/op
+WorkloadActual   9: 1 op, 386940300.00 ns, 386.9403 ms/op
+WorkloadActual  10: 1 op, 407515200.00 ns, 407.5152 ms/op
+WorkloadActual  11: 1 op, 807723700.00 ns, 807.7237 ms/op
+WorkloadActual  12: 1 op, 421993200.00 ns, 421.9932 ms/op
+WorkloadActual  13: 1 op, 395091700.00 ns, 395.0917 ms/op
+WorkloadActual  14: 1 op, 390827100.00 ns, 390.8271 ms/op
+WorkloadActual  15: 1 op, 395246500.00 ns, 395.2465 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 383513200.00 ns, 383.5132 ms/op
+WorkloadResult   2: 1 op, 444598300.00 ns, 444.5983 ms/op
+WorkloadResult   3: 1 op, 428776700.00 ns, 428.7767 ms/op
+WorkloadResult   4: 1 op, 398490600.00 ns, 398.4906 ms/op
+WorkloadResult   5: 1 op, 401837900.00 ns, 401.8379 ms/op
+WorkloadResult   6: 1 op, 418825500.00 ns, 418.8255 ms/op
+WorkloadResult   7: 1 op, 396889600.00 ns, 396.8896 ms/op
+WorkloadResult   8: 1 op, 386940300.00 ns, 386.9403 ms/op
+WorkloadResult   9: 1 op, 407515200.00 ns, 407.5152 ms/op
+WorkloadResult  10: 1 op, 421993200.00 ns, 421.9932 ms/op
+WorkloadResult  11: 1 op, 395091700.00 ns, 395.0917 ms/op
+WorkloadResult  12: 1 op, 390827100.00 ns, 390.8271 ms/op
+WorkloadResult  13: 1 op, 395246500.00 ns, 395.2465 ms/op
+GC:  0 0 0 81688 1
+Threading:  4 0 1
+
+// AfterAll
+// Benchmark Process 15032 has exited with code 0
+// Launch: 2 / 2
+// Execute: dotnet "668a6b17-a214-4a65-86b6-18096521e466.dll" --benchmarkName "BooruDex.Test.Benchmark.BooruBenchmark.DanbooruBooruDexV2" --job "MediumRun" --benchmarkId 1 in D:\Project\C#\API\BooruDex.Test\bin\Release\net5.0\668a6b17-a214-4a65-86b6-18096521e466\bin\Release\netcoreapp5.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET Core 5.0.0 (CoreCLR 5.0.20.51904, CoreFX 5.0.20.51904), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: MediumRun(IterationCount=15, LaunchCount=2, WarmupCount=10)
+
+OverheadJitting  1: 1 op, 1504000.00 ns, 1.5040 ms/op
+WorkloadJitting  1: 1 op, 1342541400.00 ns, 1.3425 s/op
+
+WorkloadWarmup   1: 1 op, 425742600.00 ns, 425.7426 ms/op
+WorkloadWarmup   2: 1 op, 415643900.00 ns, 415.6439 ms/op
+WorkloadWarmup   3: 1 op, 414509600.00 ns, 414.5096 ms/op
+WorkloadWarmup   4: 1 op, 440897300.00 ns, 440.8973 ms/op
+WorkloadWarmup   5: 1 op, 391247800.00 ns, 391.2478 ms/op
+WorkloadWarmup   6: 1 op, 381924700.00 ns, 381.9247 ms/op
+WorkloadWarmup   7: 1 op, 375662100.00 ns, 375.6621 ms/op
+WorkloadWarmup   8: 1 op, 432263300.00 ns, 432.2633 ms/op
+WorkloadWarmup   9: 1 op, 841343800.00 ns, 841.3438 ms/op
+WorkloadWarmup  10: 1 op, 834378600.00 ns, 834.3786 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 393118800.00 ns, 393.1188 ms/op
+WorkloadActual   2: 1 op, 537272300.00 ns, 537.2723 ms/op
+WorkloadActual   3: 1 op, 720550200.00 ns, 720.5502 ms/op
+WorkloadActual   4: 1 op, 570705700.00 ns, 570.7057 ms/op
+WorkloadActual   5: 1 op, 386142900.00 ns, 386.1429 ms/op
+WorkloadActual   6: 1 op, 590499200.00 ns, 590.4992 ms/op
+WorkloadActual   7: 1 op, 554442800.00 ns, 554.4428 ms/op
+WorkloadActual   8: 1 op, 389545200.00 ns, 389.5452 ms/op
+WorkloadActual   9: 1 op, 396517700.00 ns, 396.5177 ms/op
+WorkloadActual  10: 1 op, 404424000.00 ns, 404.4240 ms/op
+WorkloadActual  11: 1 op, 387927300.00 ns, 387.9273 ms/op
+WorkloadActual  12: 1 op, 405998300.00 ns, 405.9983 ms/op
+WorkloadActual  13: 1 op, 405971700.00 ns, 405.9717 ms/op
+WorkloadActual  14: 1 op, 449765200.00 ns, 449.7652 ms/op
+WorkloadActual  15: 1 op, 420608100.00 ns, 420.6081 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 393118800.00 ns, 393.1188 ms/op
+WorkloadResult   2: 1 op, 537272300.00 ns, 537.2723 ms/op
+WorkloadResult   3: 1 op, 720550200.00 ns, 720.5502 ms/op
+WorkloadResult   4: 1 op, 570705700.00 ns, 570.7057 ms/op
+WorkloadResult   5: 1 op, 386142900.00 ns, 386.1429 ms/op
+WorkloadResult   6: 1 op, 590499200.00 ns, 590.4992 ms/op
+WorkloadResult   7: 1 op, 554442800.00 ns, 554.4428 ms/op
+WorkloadResult   8: 1 op, 389545200.00 ns, 389.5452 ms/op
+WorkloadResult   9: 1 op, 396517700.00 ns, 396.5177 ms/op
+WorkloadResult  10: 1 op, 404424000.00 ns, 404.4240 ms/op
+WorkloadResult  11: 1 op, 387927300.00 ns, 387.9273 ms/op
+WorkloadResult  12: 1 op, 405998300.00 ns, 405.9983 ms/op
+WorkloadResult  13: 1 op, 405971700.00 ns, 405.9717 ms/op
+WorkloadResult  14: 1 op, 449765200.00 ns, 449.7652 ms/op
+WorkloadResult  15: 1 op, 420608100.00 ns, 420.6081 ms/op
+GC:  0 0 0 70408 1
+Threading:  4 0 1
+
+// AfterAll
+// Benchmark Process 16288 has exited with code 0
+
+Mean = 438.716 ms, StdErr = 15.289 ms (3.48%), N = 28, StdDev = 80.900 ms
+Min = 383.513 ms, Q1 = 394.598 ms, Median = 405.198 ms, Q3 = 432.732 ms, Max = 720.550 ms
+IQR = 38.134 ms, LowerFence = 337.398 ms, UpperFence = 489.933 ms
+ConfidenceInterval = [382.307 ms; 495.124 ms] (CI 99.9%), Margin = 56.409 ms (12.86% of Mean)
+Skewness = 1.97, Kurtosis = 6.24, MValue = 2.17
+
+// **************************
+// Benchmark: BooruBenchmark.DanbooruBooruSharp: MediumRun(IterationCount=15, LaunchCount=2, WarmupCount=10)
+// *** Execute ***
+// Launch: 1 / 2
+// Execute: dotnet "668a6b17-a214-4a65-86b6-18096521e466.dll" --benchmarkName "BooruDex.Test.Benchmark.BooruBenchmark.DanbooruBooruSharp" --job "MediumRun" --benchmarkId 2 in D:\Project\C#\API\BooruDex.Test\bin\Release\net5.0\668a6b17-a214-4a65-86b6-18096521e466\bin\Release\netcoreapp5.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET Core 5.0.0 (CoreCLR 5.0.20.51904, CoreFX 5.0.20.51904), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: MediumRun(IterationCount=15, LaunchCount=2, WarmupCount=10)
+
+OverheadJitting  1: 1 op, 1282800.00 ns, 1.2828 ms/op
+WorkloadJitting  1: 1 op, 1478841200.00 ns, 1.4788 s/op
+
+WorkloadWarmup   1: 1 op, 517956300.00 ns, 517.9563 ms/op
+WorkloadWarmup   2: 1 op, 462010400.00 ns, 462.0104 ms/op
+WorkloadWarmup   3: 1 op, 410833000.00 ns, 410.8330 ms/op
+WorkloadWarmup   4: 1 op, 769036200.00 ns, 769.0362 ms/op
+WorkloadWarmup   5: 1 op, 421515500.00 ns, 421.5155 ms/op
+WorkloadWarmup   6: 1 op, 382571500.00 ns, 382.5715 ms/op
+WorkloadWarmup   7: 1 op, 392394100.00 ns, 392.3941 ms/op
+WorkloadWarmup   8: 1 op, 410985500.00 ns, 410.9855 ms/op
+WorkloadWarmup   9: 1 op, 436344000.00 ns, 436.3440 ms/op
+WorkloadWarmup  10: 1 op, 422000900.00 ns, 422.0009 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 390447000.00 ns, 390.4470 ms/op
+WorkloadActual   2: 1 op, 384844000.00 ns, 384.8440 ms/op
+WorkloadActual   3: 1 op, 454224300.00 ns, 454.2243 ms/op
+WorkloadActual   4: 1 op, 426720900.00 ns, 426.7209 ms/op
+WorkloadActual   5: 1 op, 452562900.00 ns, 452.5629 ms/op
+WorkloadActual   6: 1 op, 399514100.00 ns, 399.5141 ms/op
+WorkloadActual   7: 1 op, 420994100.00 ns, 420.9941 ms/op
+WorkloadActual   8: 1 op, 407218800.00 ns, 407.2188 ms/op
+WorkloadActual   9: 1 op, 417827100.00 ns, 417.8271 ms/op
+WorkloadActual  10: 1 op, 532500100.00 ns, 532.5001 ms/op
+WorkloadActual  11: 1 op, 488097400.00 ns, 488.0974 ms/op
+WorkloadActual  12: 1 op, 470545300.00 ns, 470.5453 ms/op
+WorkloadActual  13: 1 op, 771055000.00 ns, 771.0550 ms/op
+WorkloadActual  14: 1 op, 444061000.00 ns, 444.0610 ms/op
+WorkloadActual  15: 1 op, 432752100.00 ns, 432.7521 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 390447000.00 ns, 390.4470 ms/op
+WorkloadResult   2: 1 op, 384844000.00 ns, 384.8440 ms/op
+WorkloadResult   3: 1 op, 454224300.00 ns, 454.2243 ms/op
+WorkloadResult   4: 1 op, 426720900.00 ns, 426.7209 ms/op
+WorkloadResult   5: 1 op, 452562900.00 ns, 452.5629 ms/op
+WorkloadResult   6: 1 op, 399514100.00 ns, 399.5141 ms/op
+WorkloadResult   7: 1 op, 420994100.00 ns, 420.9941 ms/op
+WorkloadResult   8: 1 op, 407218800.00 ns, 407.2188 ms/op
+WorkloadResult   9: 1 op, 417827100.00 ns, 417.8271 ms/op
+WorkloadResult  10: 1 op, 532500100.00 ns, 532.5001 ms/op
+WorkloadResult  11: 1 op, 488097400.00 ns, 488.0974 ms/op
+WorkloadResult  12: 1 op, 470545300.00 ns, 470.5453 ms/op
+WorkloadResult  13: 1 op, 444061000.00 ns, 444.0610 ms/op
+WorkloadResult  14: 1 op, 432752100.00 ns, 432.7521 ms/op
+GC:  0 0 0 371720 1
+Threading:  6 0 1
+
+// AfterAll
+// Benchmark Process 11192 has exited with code 0
+// Launch: 2 / 2
+// Execute: dotnet "668a6b17-a214-4a65-86b6-18096521e466.dll" --benchmarkName "BooruDex.Test.Benchmark.BooruBenchmark.DanbooruBooruSharp" --job "MediumRun" --benchmarkId 2 in D:\Project\C#\API\BooruDex.Test\bin\Release\net5.0\668a6b17-a214-4a65-86b6-18096521e466\bin\Release\netcoreapp5.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET Core 5.0.0 (CoreCLR 5.0.20.51904, CoreFX 5.0.20.51904), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: MediumRun(IterationCount=15, LaunchCount=2, WarmupCount=10)
+
+OverheadJitting  1: 1 op, 1278700.00 ns, 1.2787 ms/op
+WorkloadJitting  1: 1 op, 2030912700.00 ns, 2.0309 s/op
+
+WorkloadWarmup   1: 1 op, 753169900.00 ns, 753.1699 ms/op
+WorkloadWarmup   2: 1 op, 731878900.00 ns, 731.8789 ms/op
+WorkloadWarmup   3: 1 op, 761614200.00 ns, 761.6142 ms/op
+WorkloadWarmup   4: 1 op, 798355100.00 ns, 798.3551 ms/op
+WorkloadWarmup   5: 1 op, 811052300.00 ns, 811.0523 ms/op
+WorkloadWarmup   6: 1 op, 433018100.00 ns, 433.0181 ms/op
+WorkloadWarmup   7: 1 op, 401576400.00 ns, 401.5764 ms/op
+WorkloadWarmup   8: 1 op, 751611400.00 ns, 751.6114 ms/op
+WorkloadWarmup   9: 1 op, 868846100.00 ns, 868.8461 ms/op
+WorkloadWarmup  10: 1 op, 774765400.00 ns, 774.7654 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 400385500.00 ns, 400.3855 ms/op
+WorkloadActual   2: 1 op, 374654200.00 ns, 374.6542 ms/op
+WorkloadActual   3: 1 op, 391488600.00 ns, 391.4886 ms/op
+WorkloadActual   4: 1 op, 397632200.00 ns, 397.6322 ms/op
+WorkloadActual   5: 1 op, 383135500.00 ns, 383.1355 ms/op
+WorkloadActual   6: 1 op, 444204700.00 ns, 444.2047 ms/op
+WorkloadActual   7: 1 op, 370880300.00 ns, 370.8803 ms/op
+WorkloadActual   8: 1 op, 419984900.00 ns, 419.9849 ms/op
+WorkloadActual   9: 1 op, 398866000.00 ns, 398.8660 ms/op
+WorkloadActual  10: 1 op, 382911600.00 ns, 382.9116 ms/op
+WorkloadActual  11: 1 op, 429635300.00 ns, 429.6353 ms/op
+WorkloadActual  12: 1 op, 400962700.00 ns, 400.9627 ms/op
+WorkloadActual  13: 1 op, 744298200.00 ns, 744.2982 ms/op
+WorkloadActual  14: 1 op, 402139100.00 ns, 402.1391 ms/op
+WorkloadActual  15: 1 op, 396001200.00 ns, 396.0012 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 400385500.00 ns, 400.3855 ms/op
+WorkloadResult   2: 1 op, 374654200.00 ns, 374.6542 ms/op
+WorkloadResult   3: 1 op, 391488600.00 ns, 391.4886 ms/op
+WorkloadResult   4: 1 op, 397632200.00 ns, 397.6322 ms/op
+WorkloadResult   5: 1 op, 383135500.00 ns, 383.1355 ms/op
+WorkloadResult   6: 1 op, 444204700.00 ns, 444.2047 ms/op
+WorkloadResult   7: 1 op, 370880300.00 ns, 370.8803 ms/op
+WorkloadResult   8: 1 op, 419984900.00 ns, 419.9849 ms/op
+WorkloadResult   9: 1 op, 398866000.00 ns, 398.8660 ms/op
+WorkloadResult  10: 1 op, 382911600.00 ns, 382.9116 ms/op
+WorkloadResult  11: 1 op, 429635300.00 ns, 429.6353 ms/op
+WorkloadResult  12: 1 op, 400962700.00 ns, 400.9627 ms/op
+WorkloadResult  13: 1 op, 402139100.00 ns, 402.1391 ms/op
+WorkloadResult  14: 1 op, 396001200.00 ns, 396.0012 ms/op
+GC:  0 0 0 352576 1
+Threading:  5 0 1
+
+// AfterAll
+// Benchmark Process 10844 has exited with code 0
+
+Mean = 418.400 ms, StdErr = 6.975 ms (1.67%), N = 28, StdDev = 36.907 ms
+Min = 370.880 ms, Q1 = 394.873 ms, Median = 404.679 ms, Q3 = 435.579 ms, Max = 532.500 ms
+IQR = 40.706 ms, LowerFence = 333.814 ms, UpperFence = 496.639 ms
+ConfidenceInterval = [392.666 ms; 444.134 ms] (CI 99.9%), Margin = 25.734 ms (6.15% of Mean)
+Skewness = 1.19, Kurtosis = 4.23, MValue = 2.92
+
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts\results\BooruDex.Test.Benchmark.BooruBenchmark-report.csv
+  BenchmarkDotNet.Artifacts\results\BooruDex.Test.Benchmark.BooruBenchmark-report-github.md
+  BenchmarkDotNet.Artifacts\results\BooruDex.Test.Benchmark.BooruBenchmark-report.html
+
+// * Detailed results *
+BooruBenchmark.DanbooruBooruDexV1: MediumRun(IterationCount=15, LaunchCount=2, WarmupCount=10)
+Runtime = .NET Core 5.0.0 (CoreCLR 5.0.20.51904, CoreFX 5.0.20.51904), X64 RyuJIT; GC = Concurrent Workstation
+Mean = 410.518 ms, StdErr = 4.633 ms (1.13%), N = 26, StdDev = 23.625 ms
+Min = 380.495 ms, Q1 = 396.770 ms, Median = 407.193 ms, Q3 = 417.930 ms, Max = 465.018 ms
+IQR = 21.160 ms, LowerFence = 365.029 ms, UpperFence = 449.670 ms
+ConfidenceInterval = [393.259 ms; 427.777 ms] (CI 99.9%), Margin = 17.259 ms (4.20% of Mean)
+Skewness = 0.71, Kurtosis = 2.67, MValue = 2
+-------------------- Histogram --------------------
+[378.362 ms ; 401.241 ms) | @@@@@@@@
+[401.241 ms ; 422.174 ms) | @@@@@@@@@@@@@
+[422.174 ms ; 434.329 ms) | @
+[434.329 ms ; 447.515 ms) | 
+[447.515 ms ; 468.448 ms) | @@@@
+---------------------------------------------------
+
+BooruBenchmark.DanbooruBooruSharp: MediumRun(IterationCount=15, LaunchCount=2, WarmupCount=10)
+Runtime = .NET Core 5.0.0 (CoreCLR 5.0.20.51904, CoreFX 5.0.20.51904), X64 RyuJIT; GC = Concurrent Workstation
+Mean = 418.400 ms, StdErr = 6.975 ms (1.67%), N = 28, StdDev = 36.907 ms
+Min = 370.880 ms, Q1 = 394.873 ms, Median = 404.679 ms, Q3 = 435.579 ms, Max = 532.500 ms
+IQR = 40.706 ms, LowerFence = 333.814 ms, UpperFence = 496.639 ms
+ConfidenceInterval = [392.666 ms; 444.134 ms] (CI 99.9%), Margin = 25.734 ms (6.15% of Mean)
+Skewness = 1.19, Kurtosis = 4.23, MValue = 2.92
+-------------------- Histogram --------------------
+[370.557 ms ; 402.462 ms) | @@@@@@@@@@@@@@
+[402.462 ms ; 415.064 ms) | @
+[415.064 ms ; 446.968 ms) | @@@@@@@@
+[446.968 ms ; 477.506 ms) | @@@
+[477.506 ms ; 504.050 ms) | @
+[504.050 ms ; 516.548 ms) | 
+[516.548 ms ; 548.452 ms) | @
+---------------------------------------------------
+
+BooruBenchmark.DanbooruBooruDexV2: MediumRun(IterationCount=15, LaunchCount=2, WarmupCount=10)
+Runtime = .NET Core 5.0.0 (CoreCLR 5.0.20.51904, CoreFX 5.0.20.51904), X64 RyuJIT; GC = Concurrent Workstation
+Mean = 438.716 ms, StdErr = 15.289 ms (3.48%), N = 28, StdDev = 80.900 ms
+Min = 383.513 ms, Q1 = 394.598 ms, Median = 405.198 ms, Q3 = 432.732 ms, Max = 720.550 ms
+IQR = 38.134 ms, LowerFence = 337.398 ms, UpperFence = 489.933 ms
+ConfidenceInterval = [382.307 ms; 495.124 ms] (CI 99.9%), Margin = 56.409 ms (12.86% of Mean)
+Skewness = 1.97, Kurtosis = 6.24, MValue = 2.17
+-------------------- Histogram --------------------
+[381.672 ms ; 451.606 ms) | @@@@@@@@@@@@@@@@@@@@@@@
+[451.606 ms ; 528.919 ms) | 
+[528.919 ms ; 598.853 ms) | @@@@
+[598.853 ms ; 685.583 ms) | 
+[685.583 ms ; 755.517 ms) | @
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet=v0.12.1, OS=Windows 10.0.18363.1198 (1909/November2018Update/19H2)
+AMD FX-8800P Radeon R7, 12 Compute Cores 4C+8G, 1 CPU, 4 logical and 4 physical cores
+.NET Core SDK=5.0.100
+  [Host]    : .NET Core 5.0.0 (CoreCLR 5.0.20.51904, CoreFX 5.0.20.51904), X64 RyuJIT
+  MediumRun : .NET Core 5.0.0 (CoreCLR 5.0.20.51904, CoreFX 5.0.20.51904), X64 RyuJIT
+
+Job=MediumRun  IterationCount=15  LaunchCount=2  
+WarmupCount=10  
+
+|             Method |     Mean |    Error |   StdDev |      Min |      Max | Rank | Gen 0 | Gen 1 | Gen 2 | Allocated |
+|------------------- |---------:|---------:|---------:|---------:|---------:|-----:|------:|------:|------:|----------:|
+| DanbooruBooruDexV1 | 410.5 ms | 17.26 ms | 23.62 ms | 380.5 ms | 465.0 ms |    1 |     - |     - |     - |  253.5 KB |
+| DanbooruBooruSharp | 418.4 ms | 25.73 ms | 36.91 ms | 370.9 ms | 532.5 ms |    1 |     - |     - |     - | 344.31 KB |
+| DanbooruBooruDexV2 | 438.7 ms | 56.41 ms | 80.90 ms | 383.5 ms | 720.6 ms |    1 |     - |     - |     - |  68.76 KB |
+
+// * Warnings *
+MultimodalDistribution
+  BooruBenchmark.DanbooruBooruSharp: MediumRun -> It seems that the distribution can have several modes (mValue = 2.92)
+
+// * Hints *
+Outliers
+  BooruBenchmark.DanbooruBooruDexV1: MediumRun -> 4 outliers were removed (592.92 ms..918.32 ms)
+  BooruBenchmark.DanbooruBooruSharp: MediumRun -> Something went wrong with outliers: Size(WorkloadActual) = 30, Size(WorkloadActual/Outliers) = 3, Size(Result) = 28), OutlierMode = RemoveUpper
+  BooruBenchmark.DanbooruBooruDexV2: MediumRun -> Something went wrong with outliers: Size(WorkloadActual) = 30, Size(WorkloadActual/Outliers) = 7, Size(Result) = 28), OutlierMode = RemoveUpper
+
+// * Legends *
+  Mean      : Arithmetic mean of all measurements
+  Error     : Half of 99.9% confidence interval
+  StdDev    : Standard deviation of all measurements
+  Min       : Minimum
+  Max       : Maximum
+  Rank      : Relative position of current benchmark mean among all benchmarks (Arabic style)
+  Gen 0     : GC Generation 0 collects per 1000 operations
+  Gen 1     : GC Generation 1 collects per 1000 operations
+  Gen 2     : GC Generation 2 collects per 1000 operations
+  Allocated : Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+  1 ms      : 1 Millisecond (0.001 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+// ** Remained 0 benchmark(s) to run **
+Run time: 00:01:37 (97.97 sec), executed benchmarks: 3
+
+Global total time: 00:02:44 (164.1 sec), executed benchmarks: 3
+// * Artifacts cleanup *
